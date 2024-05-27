@@ -1,0 +1,60 @@
+Test Case Name: File Manager Visible At Sidebar
+Model used: openai/gpt-3.5-turbo
+Model answer:
+{
+    "correct_locator": "//*[@id='sidebar']/div/div[1]/div/ul/li[7]/a/span",
+    "solution_description": "This locator should be used to identify the 'File Manager' element in the sidebar."
+}
+Test Case Name: Theme Can Be Toggled To Dark Mode
+Model used: openai/gpt-3.5-turbo
+Model answer:
+{
+  correct_locator: "id='theme-toggler'",
+  solution_description: "This locator has the highest similarity ratio of 84.85% among the candidates, making it the best choice to replace the broken locator 'id:theme-toggle'."
+}
+Test Case Name: Navigation To Starter Page From Sidebar Is Functional
+Model used: openai/gpt-3.5-turbo
+Model answer:
+{
+  "correct_locator": "link:Starter Page",
+  "solution_description": "Based on the provided list of potential locator candidates with similarity ratio values, it seems that the correct locator for the link to the 'Starter Page' might be 'link:Starter Page' with a similarity ratio of 100%. Please use this locator in your test script to navigate to the Starter Page from the sidebar."
+}
+Test Case Name: Tasks List Scripts Can Be Changed
+Model used: openai/gpt-3.5-turbo
+Model answer:
+{
+	"correct_locator": "name='description'",
+	"solution_description": "Based on the high similarity ratio of 68.97%, 'name='description'' is a potential locator candidate for the element on the page."
+}
+Test Case Name: Navigation To Sign In Page Is Functional
+Model used: openai/gpt-3.5-turbo
+Model answer:
+{
+  correct_locator: "type='button'",
+  solution_description: "Choose the element with the highest similarity ratio value as the correct locator candidate"
+}
+Test Case Name: Dashboard Search Has Label Attached
+Model used: openai/gpt-3.5-turbo
+Model answer:
+{
+  correct_locator: "class='sr-only'>Search</label>",
+  solution_description: "This locator has the highest similarity ratio with the desired element text 'Search'."
+}
+Test Case Name: Statistics Table Visible At Dashboard
+Model used: openai/gpt-3.5-turbo
+Model answer:
+{
+    "correct_locator": "//*[@id='main-content']/main/div/div[1]/div[2]/h3",
+    "solution_description": "Use the corrected locator to identify the element on the webpage."
+}
+Test Case Name: All Apps Are Visible At Sidebar
+Model used: openai/gpt-3.5-turbo
+Model answer:
+{
+  correct_locator: "//*[@id='dropdown-dashboard']/li[1]/a",
+  solution_description: "Based on the provided list of potential locator candidates, a potential correct locator could be one of the following options: 
+- id='dropdown-dashboard' 
+- aria-controls='dropdown-dashboard' 
+- data-collapse-toggle='dropdown-dashboard' 
+However, further validation and testing may be required to confirm the correct locator."
+}

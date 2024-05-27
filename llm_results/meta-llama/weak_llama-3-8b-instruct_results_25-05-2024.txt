@@ -1,0 +1,110 @@
+Test Case Name: File Manager Visible At Sidebar
+Model used: meta-llama/llama-3-8b-instruct
+Model answer:
+[
+    {correct_locator: '#sidebar > div > div > div > ul > li:nth-child(7) > a > span', solution_description: 'Replaced XPath with a more robust CSS Selector that also targets the seventh <li> element with class of \'ap-link-text\' and an \'ap-icon\' child'},
+    {correct_locator: 'xpath=(//li[7]/a)[last()]', solution_description: 'Rewrote the locator using a more straightforward XPath that directly targets the last child <a> tag of the seventh <li> element'},
+    {correct_locator: '.sidebar.ap-link-text[7] > span', solution_description: 'Improved the locator by specifying a class selector for the \'sidebar\' element and selecting the seventh child with attribute \'ap-link-text\' and targetting its direct child span'},
+    {correct_locator: '//div[@id=\'sidebar\']/ul/li[7]/a/span', solution_description: 'Removed redundant information in the original locator, selecting the direct children more explicitly'},
+    {correct_locator: '//div/div[3]/div/ul/li[7]/a/span', solution_description: 'Tidied up the original XPath to improve readability'},
+    {correct_locator: '//div[@id=\'sidebar\']//li[7]//span', solution_description: 'Using //div[@id=\'sidebar\'] instead of //div/div/div, made it more compact'},
+    {correct_locator: '.sidebar ul li[7] a span', solution_description: 'Selected all descendants of \'ul\' directly under class=\'sidebar\''},
+    {correct_locator: '(//div[@id=\'sidebar\']//ul//li)[7]//span', solution_description: 'Improved by simplifying and making the selection of seventh <li> and <span>'},
+    {correct_locator: '#sidebar > ul > li:nth-child(7) > a > span', solution_description: 'Fixed indentation and selected a child more explicitly, ensuring robustness'},
+    {correct_locator: '#sidebar ul li:nth-child(7) a span', solution_description: 'Specified id=\'sidebar\'' to target more specifically and used class or attribute'}
+]
+Test Case Name: Theme Can Be Toggled To Dark Mode
+Model used: meta-llama/llama-3-8b-instruct
+Model answer:
+{
+"correct_locator": "id:theme-toggler",
+"solution_description": "Use the correct locator 'id:theme-toggler' to resolve the issue of Element 'id:theme-toggle' did not appear in 5 seconds."
+}
+Test Case Name: Navigation To Starter Page From Sidebar Is Functional
+Model used: meta-llama/llama-3-8b-instruct
+Model answer:
+[
+    {
+        "correct_locator": "//a[@href='#starter']",
+        "solution_description": "Using XPath to find the anchor tag with href='#starter' in all pages."
+    },
+    {
+        "correct_locator": "css=#starter",
+        "solution_description": "Using CSS locator to find an element with id='starter'."
+    },
+    {
+        "correct_locator": "//a[text()='Starter Page']",
+        "solution_description": "Using XPath to find the anchor tag with text 'Starter Page' in all pages."
+    },
+    {
+        "correct_locator": "//a[@href='#starter']//parent::nav//li//a",
+        "solution_description": "Using XPath to find the anchor tag with href='#starter' within a nav element."
+    },
+    {
+        "correct_locator": "xpath=//li/a[contains(text(), 'Starter Page')]",
+        "solution_description": "Using XPath to find the anchor tag containing the text 'Starter Page'."
+    },
+    {
+        "correct_locator": "//a[starts-with(text(), 'Starter')]",
+        "solution_description": "Using XPath to find the anchor tag with text starting with 'Starter'."
+    },
+    {
+        "correct_locator": "//nav//li//a[@href='#starter']",
+        "solution_description": "Using XPath to find the anchor tag with href='#starter' within a nav element."
+    },
+    {
+        "correct_locator": "partial link text:Starter",
+        "solution_description": "Using partial link text to find an element with a link text containing 'Starter'."
+    },
+    {
+        "correct_locator": "link=Starter Page",
+        "solution_description": "Using link locator to find an element with a link text 'Starter Page'."
+    },
+    {
+        "correct_locator": "//a[.()='Starter Page']",
+        "solution_description": "Using XPath to find the anchor tag with value 'Starter Page'."
+    }
+]
+Test Case Name: Tasks List Scripts Can Be Changed
+Model used: meta-llama/llama-3-8b-instruct
+Model answer:
+{
+"correct_locator": "xpath://script",
+"solution_description": "The locator matches the script tag on the webpage, so the correct locator is Xpath. The repair tool retrieved the Xpath locator candidate with the highest similarity ratio of 66.67."
+}
+Test Case Name: Navigation To Sign In Page Is Functional
+Model used: meta-llama/llama-3-8b-instruct
+Model answer:
+[
+    {correct_locator: "//input[@type='submit']", solution_description: "Changing the XPath to target the 'input' html tag as there are multiple types of elements on the page"},
+    {correct_locator: "//button[@type='submit']", solution_description: "Using the 'button' tag directly based on the similarity ratio for 'button' type"},
+    {correct_locator: "//form//button[@type='submit']", solution_description: "Using a more specific locator by navigating through the DOM structure to the 'button' element"},
+    {correct_locator: "//form//input[@type='submit']", solution_description: "Using a more specific locator by navigating through the DOM structure to the 'input' element"},
+    {correct_locator: ".submit", solution_description: "Using a CSS locator to target the 'submit' class"},
+    {correct_locator: "//tagname[@type='submit']", solution_description: "Using a more general XPath to target elements with the specified type attribute"},
+    {correct_locator: "//tagname[contains(@type,'submit')]", solution_description: "Using a more general XPath to target elements with a type attribute containing 'submit'"},
+    {correct_locator: "//button[@role='submit']", solution_description: "Using the 'role' attribute to target the 'submit' element"},
+    {correct_locator: "("//button") and (.//input[@type='submit'])", solution_description: "Using a nested locator to target both 'button' and 'input' elements"},
+    {correct_locator: "//button::{('submit')}|[type='submit']", solution_description: "Using a CSS-like locator to target the 'submit' element"}
+]
+Test Case Name: Dashboard Search Has Label Attached
+Model used: meta-llama/llama-3-8b-instruct
+Model answer:
+{
+"correct_locator": "//span[@class='sr-only'][contains(.,'Search')]",
+"solution_description": "Instead of using a class locator, which is ambiguous and may change, we're using an XPATH locator to select the specific span element that contains the text 'Search' and has the class 'sr-only'."
+}
+Test Case Name: Statistics Table Visible At Dashboard
+Model used: meta-llama/llama-3-8b-instruct
+Model answer:
+{
+"correct_locator": "data-date='1717794000000'", 
+"solution_description": "The test case is looking for an HTML element with a specific attribute value 'data-date' that matches the provided timing ('1717794000000'). This locator seems more robust and less prone to changes in the page's structure."
+}
+Test Case Name: All Apps Are Visible At Sidebar
+Model used: meta-llama/llama-3-8b-instruct
+Model answer:
+{
+  "correct_locator": "#dropdown-dashboard > li:nth-child(1) > a",
+  "solution_description": "Replace the current locator with a more specific and robust one, using the ID of the dropdown-toggle element and the child index of the list item."
+}

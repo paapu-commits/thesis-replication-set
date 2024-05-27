@@ -1,0 +1,56 @@
+Test Case Name: File Manager Visible At Sidebar
+Model used: openai/gpt-3.5-turbo
+Model answer:
+{
+  "correct_locator": "//*[@id='sidebar']/div[1]/div[1]/div[1]/ul[1]/li[7]/a[1]/span[1]",
+  "solution_description": "Based on the similarity ratio values, this locator candidate has the highest score (86.40) and matches the desired element 'File Manager'."
+}
+Test Case Name: Theme Can Be Toggled To Dark Mode
+Model used: openai/gpt-3.5-turbo
+Model answer:
+{
+  "correct_locator": "id:theme-toggler",
+  "solution_description": "Based on the similarity ratio values, id 'theme-toggler' seems to be the most appropriate locator for toggling the theme to dark mode."
+}
+Test Case Name: Navigation To Starter Page From Sidebar Is Functional
+Model used: openai/gpt-3.5-turbo
+Model answer:
+{
+  correct_locator: "link:http://localhost:5095/start/",
+  solution_description: "Use this locator 'link:http://localhost:5095/start/' to locate the 'Starter Page' link in the sidebar."
+}
+Test Case Name: Tasks List Scripts Can Be Changed
+Model used: openai/gpt-3.5-turbo
+Model answer:
+{
+"correct_locator": "name=scripts",
+"solution_description": "Based on the provided list of potential locator candidates, the 'name' attribute seems to be the most distinctive and unique identifier for the element selecting scripts in the list. The 'name=scripts' locator should be used to identify the element accurately."
+}
+Test Case Name: Navigation To Sign In Page Is Functional
+Model used: openai/gpt-3.5-turbo
+Model answer:
+{
+    "correct_locator": "//*[@id='id_username']",
+    "solution_description": "This locator refers to the 'username' input field and has high similarity ratio, so it is a good candidate for the 'Sign In' page. You can use this to locate the username input field."
+}
+Test Case Name: Dashboard Search Has Label Attached
+Model used: openai/gpt-3.5-turbo
+Model answer:
+{
+    "correct_locator": "xpath:/html[1]/body[1]/nav[1]/div[1]/div[1]/div[1]/form[1]/label[1]",
+    "solution_description": "Based on the similarity ratio values, the label element with class 'search-only' seems to be a good candidate as it is highly rated. Therefore, it is suggested to use this locator for the test."
+}
+Test Case Name: Statistics Table Visible At Dashboard
+Model used: openai/gpt-3.5-turbo
+Model answer:
+{
+correct_locator: '//*[@id='main-content']/main[1]/div[1]/div[2]/h3[1]',
+solution_description: 'Identified the correct locator with the highest similarity ratio value.'
+}
+Test Case Name: All Apps Are Visible At Sidebar
+Model used: openai/gpt-3.5-turbo
+Model answer:
+{
+"correct_locator": "//*[@id='dropdown-dashboard']/li[1]/a",
+"solution_description": "This locator has a high degree of similarity and is likely the correct match. Ensure the test case context is correct and rerun the test to verify the fix."
+}
