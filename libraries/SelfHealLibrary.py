@@ -48,7 +48,7 @@ class SelfHealLibrary:
         answer = self._call_openai(model, messages)
         BuiltIn().log(f"Answer from LLM: {answer}")
         BuiltIn().log_to_console('\n' + answer)
-        # next function used only for this thesis
+        # next _create_results_for_thesis function used only for thesis
         self._create_results_for_thesis(model, self.testcase_name, answer)
         self._find_and_replace_locator(answer)
 
@@ -105,18 +105,7 @@ class SelfHealLibrary:
             BuiltIn().log("Fetched all elements from page")
         except Exception as err:
             BuiltIn().log(f'Unexpected {err}, {type(err)}')
-
-        # turn all_elements into json
-        
         return all_elements
-    
-#    @keyword
-#    def try_to_fix(self):
-#        self._replace_line(self.file_to_be_fixed, self.line_to_be_fixed-1, self.answer)
-    
-#    @keyword
-#    def revert_changes(self):
-#        self._revert_file_changes(self.file_to_be_fixed)
 
     def _create_message_for_llm(self, test_error_msg, testcase, variables, candidates=""):
         '''Creating request message for llm'''
@@ -132,7 +121,7 @@ class SelfHealLibrary:
         if candidates:
             messages.append({"role": "user", "content": llm_potential_candidates + candidates})  
         messages.append({"role": "user", "content": llm_answer})
-        #BuiltIn.log(f"Request for LLM: {messages}")
+        BuiltIn.log(f"Request message for LLM: {messages}")
         return messages
 
     def _call_openai(self, model, messages):
@@ -170,7 +159,6 @@ class SelfHealLibrary:
         locator = locator.replace('"',"'")
         webelem = self.session.get_webelement(locator)
         all_attributes = self.session.execute_javascript(js_get_element, 'ARGUMENTS', webelem)
-        #print("ATTRIBUTES: " + str(all_attributes))
         BuiltIn().log(str(all_attributes))
         all_attributes_json = json.loads(all_attributes[1:-1])
         all_attributes_json['locator'] = locator
@@ -198,9 +186,7 @@ class SelfHealLibrary:
 
     def _get_candidates_strong(self, number_of_candidates=10):
         all_elements = self._get_all_page_elements()
-        #BuiltIn().log(all_elements)
         all_elements_json = json.loads(all_elements)
-        #print(str(all_elements_json))
         candidates = {}
         try:
             Locators = Query()
@@ -239,8 +225,3 @@ class SelfHealLibrary:
         filedata = filedata.replace(self.failed_variable, new_locator)
         with open(file_name, 'w') as write_file:
             write_file.write(filedata)
-
-    def _revert_file_changes(self, file_name):
-        file = open(file_name, 'w')
-        file.writelines(self.file_backup)
-        file.close()
